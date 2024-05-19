@@ -1,0 +1,76 @@
+<!-- -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trivia</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia</h1>
+        </div>
+    
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- Give multiple choice questions and provide the javascript function and parameters to check correctness-->
+                <div>
+                    <h3>What is the capital of France?</h3>
+                    <button onclick="checkAnswer(this, false, 'popMessage')">London</button>
+                    <button onclick="checkAnswer(this, false, 'popMessage')">Berlin</button>
+                    <button onclick="checkAnswer(this, true, 'popMessage')">Paris</button>
+                    <p id="popMessage"></p>
+                </div>
+                <div>
+                    <h3>In which of these countries is West Africa's first natural resources university found?</h3>
+                    <button onclick="checkAnswer(this, false, 'popMessages')">Nigeria</button>
+                    <button onclick="checkAnswer(this, true, 'popMessages')">Ghana</button>
+                    <button onclick="checkAnswer(this, false, 'popMessages')">Senegal</button>
+                    <p id="popMessages"></p>
+                </div>  
+
+                 <!--Score board-->
+                <div id="score">
+                    <button id="bt" type="text"> 
+                        <h3>SCORE: <h2 id="sc">0</h2> </h3>
+                </div>
+
+                <!--A div to provide comments based on user's performance-->
+                <div id="comment">
+                        <h3> Kudos! You make this look easy!</h3>
+                </div>
+
+                <div>
+                    <h3>Which is the highest mountain in the world?</h3>
+                        <button onclick="checkAnswer(this, false,'pop')">Afadjato</button>
+                        <button onclick="checkAnswer(this, false,'pop')">Kilmajaro</button>
+                        <button onclick="checkAnswer(this, true,'pop')">Everest</button>
+                        <p id="pop"></p>
+                </div>
+                <div>
+                    <h3>What is  the name of Hans' girlfriend? </h3>
+                    <button onclick="checkAnswer(this,true,'pops')" >Nana Akua</button>
+                    <button onclick="checkAnswer(this,false,'pops')" >Nana Ama</button>
+                    <button onclick="checkAnswer(this,false,'pops')">Nana Adwoa</button>
+                    <p id="pops"></p> 
+                </div>
+            </div>
+            <!-- Free Responds questions-->
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <div>
+                    <h3>What is the largest ocean in the world?</h3>
+                    <input type="text" id="fr-response" placeholder="Type your answer...">
+                    <button onclick="checkFreeResponse()">Confirm</button>
+                </div>
+                <p id="fr-feedback"></p>
+            </div>
+        </div>
+        <script src="trivia.js"></script> <!--Link JS-->
+    </body>
+    </html>
+    
