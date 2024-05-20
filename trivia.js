@@ -2,16 +2,34 @@
 const score = document.querySelector("#sc");
 const feedback = document.getElementById("fr-feedback");
 const responseField = document.getElementById("fr-response");
-const comment = document.querySelector('#comment h3'); 
+const comment = document.querySelector('#comment h3');
+
+ 
 
 // Set the initial score to zero
 score.innerHTML = "0";
 
-// Creating an array for positive feedback
-positive =['Kudos!','Great job','You got it','You make this look easy!','Bravo!',];
+// Creating an array for positive feedbacks and select randomly from it
+positive =["Kudos!","Great job","You got it","You're awesome!","Bravo!","Outstanding performance!"];
+function getRandomFeedbackP() {
+  comment.style.backgroundColor = 'green';
+  var pComment = positive[Math.floor(Math.random() * positive.length)];
+  comment.textContent = pComment;
+  setTimeout(() => {
+    comment.textContent = "";
+  }, 1000);
+}
 
-// Creating an array for negative feedback
+// Creating an array for negative feedbacks and selecting randomnly from it
 negative =['Oops!','Try Again!','Not Quite It','You Missed!','Give Another Shot',];
+function getRandomFeedbackN() {
+  comment.style.backgroundColor = 'red';
+  var nComment = negative[Math.floor(Math.random() * negative.length)];
+  comment.textContent = nComment;
+  setTimeout(() => {
+    comment.textContent = "";
+  }, 1000);
+}
 
 // Creating a function that will check answers for multiple choice questions
 function checkAnswer(button, isCorrect, feedbackId) {
@@ -20,11 +38,14 @@ function checkAnswer(button, isCorrect, feedbackId) {
     button.style.backgroundColor = "green";
     feedback.textContent = "Correct!";
     feedback.style.color = "green";
+    getRandomFeedbackP()
     score.innerHTML = parseInt(score.innerHTML) + 1;
+
   } else {
     button.style.backgroundColor = "red";
     feedback.textContent = "Incorrect";
     feedback.style.color = "red";
+    getRandomFeedbackN()
     // set the button's background color back to original
     setTimeout(() => {
       button.style.backgroundColor = "";
