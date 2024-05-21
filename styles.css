@@ -65,14 +65,15 @@ input[type="text"]:hover {
     position: fixed;
     right: 20px;
 }
-#score, #bt {
+#score {
     background-color: rgb(39, 38, 38);
     border-radius: 15%;
+    margin-top: 17rem;
 }
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-    #score, #bt, #score h3{
+    #score, #score h3{
         border-radius: 10%; /* Adjust border radius for smaller screens */
     }
 }
@@ -86,13 +87,14 @@ input[type="text"]:hover {
 #comment h3, #comment {
     width: 20rem;
     text-align: center;
-    position: fixed;
+    position:fixed;
     background-color: red;
     font-family: cursive;
     font-weight: 800;
     font-size: xx-large;
     right: 40%;
     border-radius: 10rem;
+    margin-top: 10rem;
 
 
 }

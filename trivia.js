@@ -60,6 +60,7 @@ function checkFreeResponse() {
 
   // Turn input field green when input is correct
   if (userResponse === "pacific") {
+    getRandomFeedbackP()
     score.innerHTML = parseInt(score.innerHTML) + 1;
     responseField.style.backgroundColor = "green";
     feedback.textContent = "Correct!";
@@ -67,6 +68,7 @@ function checkFreeResponse() {
 
     // Turn input field red when input is wrong
   } else {
+    getRandomFeedbackN()
     responseField.style.backgroundColor = "red";
     feedback.textContent = "Incorrect";
     feedback.style.color = "red";
